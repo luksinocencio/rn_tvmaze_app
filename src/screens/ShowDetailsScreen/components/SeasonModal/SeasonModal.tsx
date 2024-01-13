@@ -1,24 +1,24 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {Modalize} from 'react-native-modalize';
-import {colors} from '../../../../styles/colors';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { Modalize } from 'react-native-modalize'
+import { colors } from '../../../../styles/colors'
 
 interface Props {
-  seasons: string[];
-  onSelectSeason: (season: string) => void;
-  selectedSeason: string;
+  seasons: string[]
+  onSelectSeason: (season: string) => void
+  selectedSeason: string
 }
 
 export const SeasonModal = React.forwardRef<Modalize, Props>(
-  ({seasons, onSelectSeason}, ref) => {
+  ({ seasons, onSelectSeason }, ref) => {
     function handleSelect(value: string) {
-      onSelectSeason(value);
-      ref?.current?.close();
+      onSelectSeason(value)
+      ref?.current?.close()
     }
 
     return (
       <Modalize
-        scrollViewProps={{showsVerticalScrollIndicator: false}}
+        scrollViewProps={{ showsVerticalScrollIndicator: false }}
         modalHeight={500}
         modalStyle={styles.container}
         ref={ref}>
@@ -33,9 +33,9 @@ export const SeasonModal = React.forwardRef<Modalize, Props>(
           ))}
         </View>
       </Modalize>
-    );
+    )
   },
-);
+)
 
 const styles = StyleSheet.create({
   container: {
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 40,
   },
-});
+})
