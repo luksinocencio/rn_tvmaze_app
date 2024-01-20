@@ -8,7 +8,7 @@ import { ImageIcon } from '../ImageIcon/ImageIcon'
 const starIcon = require('../../assets/images/star.png')
 
 interface Props {
-  rating?: Rating
+  rating?: Rating | undefined
 }
 export function StarRating({ rating }: Props) {
   if (!rating?.average) {

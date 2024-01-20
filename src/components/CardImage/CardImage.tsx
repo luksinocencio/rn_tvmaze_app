@@ -1,14 +1,15 @@
-import React from 'react';
-import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
-import {ImageBySize} from '../../models/CommonModels';
-import {colors} from '../../styles/colors';
-import {commonUtils} from '../../utils/commonUtils';
-import {stylesUtils} from '../../utils/styleUtils';
+import React, { ReactNode } from 'react'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import { ImageBySize } from '../../models/CommonModels'
+import { colors } from '../../styles/colors'
+import { commonUtils } from '../../utils/commonUtils'
+import { stylesUtils } from '../../utils/styleUtils'
 
 interface Props {
-  image: ImageBySize | null;
-  title: string;
-  onPress: () => void;
+  image: ImageBySize | null
+  title: string
+  onPress: () => void
+  children: ReactNode
 }
 export const CardImage: React.FC<Props> = ({
   image,
@@ -16,7 +17,7 @@ export const CardImage: React.FC<Props> = ({
   children,
   onPress,
 }) => {
-  const imageSource = commonUtils.getImageSource(image);
+  const imageSource = commonUtils.getImageSource(image)
 
   return (
     <Pressable onPress={onPress} style={[styles.container, stylesUtils.shadow]}>
@@ -29,8 +30,8 @@ export const CardImage: React.FC<Props> = ({
         {children}
       </View>
     </Pressable>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -56,4 +57,4 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.light,
   },
-});
+})

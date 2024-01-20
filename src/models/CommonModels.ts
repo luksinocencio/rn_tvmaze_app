@@ -1,6 +1,6 @@
 export interface ImageBySize {
-  medium?: string;
-  original?: string;
+  medium?: string
+  original?: string
 }
 
 export enum DaysOfWeek {
@@ -14,10 +14,10 @@ export enum DaysOfWeek {
 }
 
 export interface Rating {
-  average?: number;
+  average?: number | null
 }
 
 export interface PageData<T> {
-  data: T[];
-  nextPage: number | null;
+  data: T[]
+  nextPage: number | null
 }

@@ -33,7 +33,7 @@ async function searchByName(searchText: string): Promise<Show[]> {
   return showList
 }
 
-async function getEpisodes(showId: string): Promise<GroupedEpisodes> {
+async function getEpisodes(showId: string | number): Promise<GroupedEpisodes> {
   const { data } = await api.get<Episode[]>(`shows/${showId}/episodes`)
 
   const seasons = commonUtils.groupBy(data, 'season')
