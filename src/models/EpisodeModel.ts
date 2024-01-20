@@ -1,30 +1,30 @@
 export interface Episode {
-  id: number;
-  url: string;
-  name: string;
-  season: number;
-  number: number;
-  type: string; //TODO: enum regular and especial
-  airdate: string;
-  airtime: string;
-  airstamp: string;
-  runtime: number;
+  id: number
+  url: string
+  name: string
+  season: number
+  number: number
+  type: string //TODO: enum regular and especial
+  airdate: string
+  airtime: string
+  airstamp: string
+  runtime: number
   rating: {
-    average: number;
-  };
+    average: number | null
+  }
   image: {
-    medium: string;
-    original: string;
-  };
-  summary: string;
+    medium: string
+    original: string
+  }
+  summary: string
   _links: {
     self: {
-      href: string;
-    };
-  };
+      href: string
+    }
+  }
 }
 
 export interface GroupedEpisodes {
-  seasonNames: string[];
-  seasons: {[key: string]: Episode[]};
+  seasonNames: string[]
+  seasons: { [key: string]: Episode[] }
 }
