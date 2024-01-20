@@ -21,6 +21,9 @@ export interface Episode {
     self: {
       href: string
     }
+    show: {
+      href: string
+    }
   }
 }
 

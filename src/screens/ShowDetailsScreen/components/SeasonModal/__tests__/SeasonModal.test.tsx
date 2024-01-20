@@ -1,7 +1,7 @@
 import React, { createRef } from 'react'
-import { render, act, fireEvent } from '@testing-library/react-native'
 import { SeasonModal } from '../SeasonModal'
 import { Modalize } from 'react-native-modalize'
+import { fireEvent, render, act } from 'test-utils'
 
 describe('SeasonModal', () => {
   test('show all season option', () => {
@@ -10,7 +10,7 @@ describe('SeasonModal', () => {
     const { getAllByText } = render(
       <SeasonModal
         ref={modalizeRef}
-        onSelectSeason={season => console.log('teste')}
+        onSelectSeason={season => console.log(season)}
         selectedSeason="1"
         seasons={['1', '2', '3']}
       />,
@@ -23,7 +23,7 @@ describe('SeasonModal', () => {
     expect(getAllByText(/season/i, { exact: false }).length).toEqual(3)
   })
 
-  test('call onSelectSeason with correct season when season was pressed', () => {
+  test('call onSelectSeason with correct season when season was pressed', async () => {
     const modalizeRef = createRef<Modalize>()
 
     const onSelectSeasonMock = jest.fn()
@@ -43,7 +43,7 @@ describe('SeasonModal', () => {
 
     const season2Element = getByText(/season 2/i, { exact: false })
 
-    fireEvent.press(season2Element)
+    await fireEvent.press(season2Element)
 
     expect(onSelectSeasonMock).toHaveBeenCalledWith('2')
   })

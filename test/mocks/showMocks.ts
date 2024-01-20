@@ -1,6 +1,6 @@
-import { DaysOfWeek } from '../../../../../models/CommonModels'
-import { Episode } from '../../../../../models/EpisodeModel'
-import { Show } from '../../../../../models/ShowModel'
+import { DaysOfWeek } from 'src/models/CommonModels'
+import { Episode } from 'src/models/EpisodeModel'
+import { Show } from 'src/models/ShowModel'
 
 const show: Show = {
   id: 250,
@@ -59,6 +59,7 @@ const episode1: Episode = {
     self: {
       href: 'https://api.tvmaze.com/episodes/20849',
     },
+    show: { href: 'https://api.tvmaze.com/shows/250' },
   },
 }
 
@@ -88,10 +89,36 @@ const episode2: Episode = {
     self: {
       href: 'https://api.tvmaze.com/episodes/20850',
     },
+    show: { href: 'https://api.tvmaze.com/shows/250' },
   },
 }
 
 const episode22: Episode = {
+  id: 348578,
+  url: 'https://www.tvmaze.com/episodes/348578/kirby-buckets-2x01-failure-to-launch',
+  name: 'Failure to Launch',
+  season: 2,
+  number: 1,
+  type: 'regular',
+  airdate: '2015-10-07',
+  airtime: '20:00',
+  airstamp: '2015-10-08T00:00:00+00:00',
+  runtime: 30,
+  rating: { average: null },
+  image: {
+    medium:
+      'https://static.tvmaze.com/uploads/images/medium_landscape/303/759629.jpg',
+    original:
+      'https://static.tvmaze.com/uploads/images/original_untouched/303/759629.jpg',
+  },
+  summary: '<p>Kirby launches his own web channel named Kirblammo.</p>',
+  _links: {
+    self: { href: 'https://api.tvmaze.com/episodes/348578' },
+    show: { href: 'https://api.tvmaze.com/shows/250' },
+  },
+}
+
+const episode23: Episode = {
   id: 321626,
   url: 'https://www.tvmaze.com/episodes/321626/kirby-buckets-2x02-the-gil-in-my-life',
   name: 'The Gil in My Life',
@@ -102,9 +129,7 @@ const episode22: Episode = {
   airtime: '20:00',
   airstamp: '2015-10-15T00:00:00+00:00',
   runtime: 30,
-  rating: {
-    average: null,
-  },
+  rating: { average: null },
   image: {
     medium:
       'https://static.tvmaze.com/uploads/images/medium_landscape/303/759630.jpg',
@@ -114,45 +139,18 @@ const episode22: Episode = {
   summary:
     '<p>Kirby launches his own web channel named Kirblammo, but Dawn, tired of always being overshadowed, hijacks his channel to try and ruin his big day.</p>',
   _links: {
-    self: {
-      href: 'https://api.tvmaze.com/episodes/321626',
-    },
+    self: { href: 'https://api.tvmaze.com/episodes/321626' },
+    show: { href: 'https://api.tvmaze.com/shows/250' },
   },
 }
 
-const episode23: Episode = {
-  id: 321627,
-  url: 'https://www.tvmaze.com/episodes/321627/kirby-buckets-2x03-the-school-spirit',
-  name: 'The School Spirit',
-  season: 2,
-  number: 3,
-  type: 'regular',
-  airdate: '2015-10-21',
-  airtime: '20:00',
-  airstamp: '2015-10-22T00:00:00+00:00',
-  runtime: 30,
-  rating: {
-    average: null,
-  },
-  image: {
-    medium:
-      'https://static.tvmaze.com/uploads/images/medium_landscape/303/759631.jpg',
-    original:
-      'https://static.tvmaze.com/uploads/images/original_untouched/303/759631.jpg',
-  },
-  summary:
-    '<p>Fish is possessed by a spirit when the boys dig up an ancient mascot.</p>',
-  _links: {
-    self: {
-      href: 'https://api.tvmaze.com/episodes/321627',
-    },
-  },
-}
+const episodeList = [episode1, episode2, episode22, episode23]
 
-export const mocks = {
+export const showMocks = {
   show,
   episode1,
   episode2,
   episode22,
   episode23,
+  episodeList,
 }

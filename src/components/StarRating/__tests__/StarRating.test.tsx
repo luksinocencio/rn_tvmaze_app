@@ -1,6 +1,7 @@
 import React from 'react'
-import { render } from '@testing-library/react-native'
+
 import { StarRating } from '../StarRating'
+import { render, screen } from 'test-utils'
 
 // jest --testPathPattern=StarRating --coverage -> npm install -g jest
 // npm run test --testPathPattern=StartRating --coverage
@@ -18,6 +19,7 @@ describe('StarRating', () => {
       const { debug } = render(<StarRating rating={{ average: 7 }} />)
       // mostrar a arvore do component
       debug()
+      expect(true).toBeTruthy()
     })
   })
   describe('rating was passed', () => {
@@ -38,10 +40,10 @@ describe('StarRating', () => {
 
   describe('rating was NOT passing', () => {
     it('the component will return nothing', () => {
-      const { UNSAFE_root } = render(<StarRating />)
+      render(<StarRating />, { wrapper: undefined })
 
-      expect(UNSAFE_root.children).toEqual([])
-      expect(UNSAFE_root.children.length).toEqual(0)
+      expect(screen.UNSAFE_root.children).toEqual([])
+      expect(screen.UNSAFE_root.children.length).toEqual(0)
     })
   })
 })
