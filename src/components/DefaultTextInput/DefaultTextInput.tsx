@@ -1,6 +1,6 @@
-import React from 'react';
-import {StyleSheet, TextInput, TextInputProps} from 'react-native';
-import {colors} from '../../styles/colors';
+import React from 'react'
+import { StyleSheet, TextInput, TextInputProps } from 'react-native'
+import { colors } from '../../styles/colors'
 
 export function DefaultTextInput(props: TextInputProps) {
   return (
@@ -10,7 +10,7 @@ export function DefaultTextInput(props: TextInputProps) {
       style={styles.input}
       {...props}
     />
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     height: 50,
     marginBottom: 16,
   },
-});
+})

@@ -1,7 +1,7 @@
 import { DaysOfWeek, ImageBySize, Rating } from './CommonModels'
 
 export interface Show {
-  id: number
+  id: number | string
   url: string
   name: string
   image: ImageBySize | null

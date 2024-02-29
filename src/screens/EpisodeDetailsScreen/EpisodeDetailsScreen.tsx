@@ -1,34 +1,33 @@
-import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
-import { DrawerScreenProps } from "@react-navigation/drawer";
+import { DrawerScreenProps } from '@react-navigation/drawer'
+import React from 'react'
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
 
-import { ScreenTemplate } from "../../components/ScreenTemplate/ScreenTemplate";
+import { ScreenTemplate } from '../../components/ScreenTemplate/ScreenTemplate'
 
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { RenderHtml } from '../../components/RenderHtml/RenderHtml'
 import { RootStackParamList } from '../../router/Router'
-import { commonUtils } from "../../utils/commonUtils";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "../../styles/colors";
-import { RenderHtml } from "../../components/RenderHtml/RenderHtml";
+import { colors } from '../../styles/colors'
+import { commonUtils } from '../../utils/commonUtils'
 
-const SCREEN_WIDTH = Dimensions.get("screen").width;
+const SCREEN_WIDTH = Dimensions.get('screen').width
 
 const coverOriginalDimensions = {
   width: 400,
-  height: 225
-};
+  height: 225,
+}
 
-const COVER_WIDTH = SCREEN_WIDTH;
+const COVER_WIDTH = SCREEN_WIDTH
 const COVER_HEIGHT =
-  (COVER_WIDTH * coverOriginalDimensions.height) /
-  coverOriginalDimensions.width;
+  (COVER_WIDTH * coverOriginalDimensions.height) / coverOriginalDimensions.width
 
-type ScreenProps = DrawerScreenProps<RootStackParamList, "EpisodeDetails">;
+type ScreenProps = DrawerScreenProps<RootStackParamList, 'EpisodeDetails'>
 
 export function EpisodeDetailsScreen({ route }: ScreenProps) {
-  const { episode } = route.params;
+  const { episode } = route.params
 
   //TODO: tratar quando não houver imagem, não exibir
-  const imageSource = commonUtils.getImageSource(episode.image, "original");
+  const imageSource = commonUtils.getImageSource(episode.image, 'original')
 
   return (
     <ScreenTemplate>
@@ -48,29 +47,29 @@ export function EpisodeDetailsScreen({ route }: ScreenProps) {
         <RenderHtml html={episode.summary} />
       </View>
     </ScreenTemplate>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   title: {
     fontSize: 32,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: colors.primary,
-    marginBottom: 16
+    marginBottom: 16,
   },
   episode: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: colors.onBackground,
-    marginBottom: 8
+    marginBottom: 8,
   },
   timeText: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     color: colors.onBackground,
-    marginTop: 12
+    marginTop: 12,
   },
   content: {
-    padding: 16
-  }
-});
+    padding: 16,
+  },
+})

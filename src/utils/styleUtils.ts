@@ -8,6 +8,6 @@ const shadow = {
   shadowRadius: 4.65,
 
   elevation: 10,
-};
+}
 
-export const stylesUtils = {shadow};
+export const stylesUtils = { shadow }

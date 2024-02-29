@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { colors } from '../../../../styles/colors'
 

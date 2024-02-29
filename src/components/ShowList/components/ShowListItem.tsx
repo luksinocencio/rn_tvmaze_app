@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native'
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-import {Show} from '../../../models/ShowModel';
-import {colors} from '../../../styles/colors';
+import { Show } from '../../../models/ShowModel'
+import { colors } from '../../../styles/colors'
 
-import {CardImage} from '../../CardImage/CardImage';
-import {StarRating} from '../../StarRating/StarRating';
+import { CardImage } from '../../CardImage/CardImage'
+import { StarRating } from '../../StarRating/StarRating'
 
 export function ShowListItem(show: Show) {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   function navigateToShowDetails() {
-    navigation.navigate('ShowDetails', {show});
+    navigation.navigate('ShowDetails', { show })
   }
 
   return (
@@ -29,7 +29,7 @@ export function ShowListItem(show: Show) {
         </Text>
       </View>
     </CardImage>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.light,
   },
-});
+})

@@ -1,14 +1,14 @@
-import React from 'react';
-import {ActivityIndicator} from 'react-native';
-import {colors} from '../../styles/colors';
+import React from 'react'
+import { ActivityIndicator } from 'react-native'
+import { colors } from '../../styles/colors'
 
 interface LoadingIndicatorProps {
-  isLoading?: boolean;
+  isLoading?: boolean
 }
-export function LoadingIndicator({isLoading = true}: LoadingIndicatorProps) {
+export function LoadingIndicator({ isLoading = true }: LoadingIndicatorProps) {
   if (isLoading) {
-    return <ActivityIndicator color={colors.primary} size={'large'} />;
+    return <ActivityIndicator color={colors.primary} size={'large'} />
   }
 
-  return null;
+  return null
 }

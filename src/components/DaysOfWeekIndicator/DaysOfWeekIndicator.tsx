@@ -1,11 +1,11 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {DaysOfWeek} from '../../models/CommonModels';
-import {colors} from '../../styles/colors';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { DaysOfWeek } from '../../models/CommonModels'
+import { colors } from '../../styles/colors'
 
 interface Day {
-  value: DaysOfWeek;
-  label: string;
+  value: DaysOfWeek
+  label: string
 }
 const DAYS: Day[] = [
   {
@@ -36,16 +36,16 @@ const DAYS: Day[] = [
     value: DaysOfWeek.Sunday,
     label: 'Sun',
   },
-];
+]
 
 interface Props {
-  days: DaysOfWeek[];
+  days: DaysOfWeek[]
 }
-export function DaysOfWeekIndicator({days}: Props) {
+export function DaysOfWeekIndicator({ days }: Props) {
   return (
     <View style={styles.container}>
       {DAYS.map(day => {
-        const check = days.includes(day.value);
+        const check = days.includes(day.value)
         return (
           <View
             key={day.value}
@@ -57,10 +57,10 @@ export function DaysOfWeekIndicator({days}: Props) {
             ]}>
             <Text style={styles.label}>{day.label}</Text>
           </View>
-        );
+        )
       })}
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
     color: colors.light,
     fontSize: 14,
   },
-});
+})

@@ -6,4 +6,4 @@ export const colors = {
   onBackground: '#FFF',
   gold: '#FFD700',
   red: '#D32F2F',
-};
+}

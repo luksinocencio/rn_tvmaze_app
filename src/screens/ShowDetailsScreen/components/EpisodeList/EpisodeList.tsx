@@ -1,12 +1,12 @@
 import { useNavigation } from '@react-navigation/native'
 import React, { useRef, useState } from 'react'
 import {
-  View,
+  FlatList,
+  ListRenderItemInfo,
+  StyleSheet,
   Text,
   TouchableOpacity,
-  StyleSheet,
-  ListRenderItemInfo,
-  FlatList,
+  View,
 } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { useQuery } from 'react-query'

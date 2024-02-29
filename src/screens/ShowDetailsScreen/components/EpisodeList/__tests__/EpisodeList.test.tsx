@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { EpisodeList } from '../EpisodeList'
-import { showService } from '../../../../../services/show/showService'
 import { render, screen, waitFor } from 'test-utils'
 import { showMocks } from 'test/mocks/showMocks'
+import { showService } from '../../../../../services/show/showService'
+import { EpisodeList } from '../EpisodeList'
 
 describe('EpisodeList', () => {
   test('show all season one episodes at first', async () => {

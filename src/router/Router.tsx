@@ -1,11 +1,11 @@
-import * as React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
+import * as React from 'react'
 
+import { Episode } from '../models/EpisodeModel'
 import { Show } from '../models/ShowModel'
+import { EpisodeDetailsScreen } from '../screens/EpisodeDetailsScreen/EpisodeDetailsScreen'
 import { ShowDetailsScreen } from '../screens/ShowDetailsScreen/ShowDetailsScreen'
 import { DrawerNavigator } from './DrawerNavigator'
-import { Episode } from '../models/EpisodeModel'
-import { EpisodeDetailsScreen } from '../screens/EpisodeDetailsScreen/EpisodeDetailsScreen'
 
 export type RootStackParamList = {
   DrawerNavigator: undefined

@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import React, {
   ReactNode,
   createContext,
@@ -5,7 +6,6 @@ import React, {
   useEffect,
   useState,
 } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { Show } from '../models/ShowModel'
 
@@ -17,8 +17,8 @@ const SHOW_LIST_KEY = '@ShowListKey'
 interface FavoriteContext {
   showList: Show[]
   addFavorite: (show: Show) => void
-  deleteFavorite: (showId: string) => void
-  isFavorite: (showId: string) => boolean
+  deleteFavorite: (showId: string | number) => void
+  isFavorite: (showId: string | number) => boolean
 }
 const FavoriteContext = createContext<FavoriteContext>({
   showList: [],
@@ -81,7 +81,7 @@ export const FavoriteProvider: React.FC<iFavoriteProvider> = ({ children }) => {
       }
     })
   }
-  function deleteFavorite(showId: string) {
+  function deleteFavorite(showId: string | number) {
     if (favoriteList[showId]) {
       const updatedList = { ...favoriteList }
       delete updatedList[showId]
@@ -90,7 +90,7 @@ export const FavoriteProvider: React.FC<iFavoriteProvider> = ({ children }) => {
       setFavoriteList(updatedList)
     }
   }
-  function isFavorite(showId: string): boolean {
+  function isFavorite(showId: string | number): boolean {
     return !!favoriteList[showId]
   }
 

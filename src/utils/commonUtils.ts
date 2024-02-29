@@ -1,47 +1,47 @@
-import {ImageProps} from 'react-native';
-import {InfiniteData} from 'react-query';
-import {ImageBySize, PageData} from '../models/CommonModels';
+import { ImageProps } from 'react-native'
+import { InfiniteData } from 'react-query'
+import { ImageBySize, PageData } from '../models/CommonModels'
 
-const imagePlaceholder = require('../assets/images/image-placeholder.png');
+const imagePlaceholder = require('../assets/images/image-placeholder.png')
 
 function getImageSource(
   imageBySize?: ImageBySize | null,
   size?: 'medium' | 'original',
 ): ImageProps['source'] {
-  const _size = size || 'medium';
+  const _size = size || 'medium'
 
   if (!imageBySize) {
-    return imagePlaceholder;
+    return imagePlaceholder
   }
 
   if (imageBySize?.[_size]) {
-    return {uri: imageBySize[_size]};
+    return { uri: imageBySize[_size] }
   }
 
-  return imagePlaceholder;
+  return imagePlaceholder
 }
 
-const groupBy = <T>(array: Array<T>, key: keyof T): {[key: string]: T[]} => {
+const groupBy = <T>(array: Array<T>, key: keyof T): { [key: string]: T[] } => {
   return array.reduce((result, currentValue) => {
-    (result[currentValue[key]] = result[currentValue[key]] || []).push(
+    ;(result[currentValue[key]] = result[currentValue[key]] || []).push(
       currentValue,
-    );
+    )
 
-    return result;
-  }, {});
-};
+    return result
+  }, {})
+}
 
 export function getFromInfiniteData<T>(
   infiniteData?: InfiniteData<PageData<T>>,
 ): T[] {
-  if (!infiniteData) return [];
+  if (!infiniteData) return []
   return infiniteData.pages.reduce((prev, curr) => {
-    return [...prev, ...curr.data];
-  }, [] as T[]);
+    return [...prev, ...curr.data]
+  }, [] as T[])
 }
 
 export const commonUtils = {
   getImageSource,
   groupBy,
   getFromInfiniteData,
-};
+}

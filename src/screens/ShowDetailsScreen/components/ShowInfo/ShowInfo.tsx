@@ -1,30 +1,29 @@
-import React from 'react';
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
-import {DaysOfWeekIndicator} from '../../../../components/DaysOfWeekIndicator/DaysOfWeekIndicator';
-import {colors} from '../../../../styles/colors';
-import {commonUtils} from '../../../../utils/commonUtils';
-import {Genres} from '../Genres/Genres';
+import React from 'react'
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { DaysOfWeekIndicator } from '../../../../components/DaysOfWeekIndicator/DaysOfWeekIndicator'
+import { colors } from '../../../../styles/colors'
+import { commonUtils } from '../../../../utils/commonUtils'
+import { Genres } from '../Genres/Genres'
 
-import {Show} from '../../../../models/ShowModel';
-import {RenderHtml} from '../../../../components/RenderHtml/RenderHtml';
-import {FavoriteButton} from '../FavoriteButton/FavoriteButton';
+import { RenderHtml } from '../../../../components/RenderHtml/RenderHtml'
+import { Show } from '../../../../models/ShowModel'
+import { FavoriteButton } from '../FavoriteButton/FavoriteButton'
 
-const SCREEN_WIDTH = Dimensions.get('screen').width;
+const SCREEN_WIDTH = Dimensions.get('screen').width
 const coverOriginalDimensions = {
   width: 210,
   height: 295,
-};
+}
 
-const COVER_WIDTH = SCREEN_WIDTH;
+const COVER_WIDTH = SCREEN_WIDTH
 const COVER_HEIGHT =
-  (COVER_WIDTH * coverOriginalDimensions.height) /
-  coverOriginalDimensions.width;
+  (COVER_WIDTH * coverOriginalDimensions.height) / coverOriginalDimensions.width
 
 interface Props {
-  show: Show;
+  show: Show
 }
-export function ShowInfo({show}: Props) {
-  const imageSource = commonUtils.getImageSource(show.image, 'original');
+export function ShowInfo({ show }: Props) {
+  const imageSource = commonUtils.getImageSource(show.image, 'original')
   return (
     <>
       <Image source={imageSource} resizeMode="cover" style={styles.cover} />
@@ -40,7 +39,7 @@ export function ShowInfo({show}: Props) {
         <RenderHtml html={show.summary} />
       </View>
     </>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -71,4 +70,4 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 16,
     borderBottomRightRadius: 16,
   },
-});
+})

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { StarRating } from '../StarRating'
 import { render, screen } from 'test-utils'
+import { StarRating } from '../StarRating'
 
 // jest --testPathPattern=StarRating --coverage -> npm install -g jest
 // npm run test --testPathPattern=StartRating --coverage
